@@ -18,6 +18,8 @@ import documentNotifier from './hooks/document-notifier';
 import fetchBlobs from './hooks/fetch-blobs';
 import isDocumentType from './hooks/is-document-type';
 
+import schemas from './schemas';
+
 export default {
   DocTypes,
   Permissions,
@@ -34,5 +36,6 @@ export default {
   documentEnrichers,
   documentNotifier,
   fetchBlobs,
-  isDocumentType
+  isDocumentType,
+  schemas
 };
