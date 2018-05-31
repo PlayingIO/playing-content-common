@@ -1,7 +1,13 @@
 import DocTypes from './constants/doc-types';
 import Permissions from './constants/permissions';
+import AuthorEntity from './entities/author.entity';
 import BatchEntity from './entities/batch.entity';
 import BlobEntity from './entities/blob.entity';
+import DocumentEntity from './entities/document.entity';
+import FileEntity from './entities/file.entity';
+import FolderEntity from './entities/folder.entity';
+import NoteEntity from './entities/note.entity';
+import TagEntity from './entities/tag.entity';
 
 import createDocumentActivity from './helpers/create-document-activity';
 import getAces from './helpers/get-aces';
@@ -23,8 +29,14 @@ import schemas from './schemas';
 export default {
   DocTypes,
   Permissions,
+  AuthorEntity,
   BatchEntity,
   BlobEntity,
+  DocumentEntity,
+  FileEntity,
+  FolderEntity,
+  NoteEntity,
+  TagEntity,
   createDocumentActivity,
   getAces,
   getParentAces,
