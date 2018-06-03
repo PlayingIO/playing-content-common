@@ -1,7 +1,7 @@
 Playing Content Common
 ======================
 
-Content common for playful applications.
+Content common utilites for building playful applications.
 
 # Usage
 

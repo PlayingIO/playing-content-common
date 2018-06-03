@@ -1,7 +1,7 @@
 {
   "name": "playing-content-common",
   "version": "1.0.2",
-  "description": "Content common for playful applications",
+  "description": "Content common utilites for building playful applications",
   "author": "Forafish",
   "license": "MIT",
   "main": "index.js",
