@@ -21,6 +21,6 @@ FolderEntity.expose('metadata', (obj, options) => {
   return fp.sortKeys(obj.metadata);
 });
 
-FolderEntity.excepts('_id');
+FolderEntity.discard('_id');
 
 export default FolderEntity.asImmutable();

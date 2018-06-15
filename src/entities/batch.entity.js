@@ -5,6 +5,6 @@ const BatchEntity = new Entity('Batch', {
   blobs: { using: BlobEntity }
 });
 
-BatchEntity.excepts('_id');
+BatchEntity.discard('_id');
 
 export default BatchEntity.asImmutable();

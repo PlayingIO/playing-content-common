@@ -17,6 +17,6 @@ BlobEntity.expose('url', (obj, options) => {
   }
 });
 
-BlobEntity.excepts('_id');
+BlobEntity.discard('_id');
 
 export default BlobEntity.asImmutable();

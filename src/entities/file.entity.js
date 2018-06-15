@@ -21,6 +21,6 @@ FileEntity.expose('metadata', (obj, options) => {
   return fp.sortKeys(obj.metadata);
 });
 
-FileEntity.excepts('_id');
+FileEntity.discard('_id');
 
 export default FileEntity.asImmutable();

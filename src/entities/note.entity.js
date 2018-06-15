@@ -21,6 +21,6 @@ NoteEntity.expose('metadata', (obj, options) => {
   return fp.sortKeys(obj.metadata);
 });
 
-NoteEntity.excepts('_id');
+NoteEntity.discard('_id');
 
 export default NoteEntity.asImmutable();
