@@ -17,6 +17,6 @@ BlobEntity.expose('url', (obj, options) => {
   }
 });
 
-BlobEntity.excepts('destroyedAt');
+BlobEntity.excepts('_id');
 
 export default BlobEntity.asImmutable();

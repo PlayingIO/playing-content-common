@@ -21,6 +21,6 @@ DocumentEntity.expose('metadata', (obj, options) => {
   return fp.sortKeys(obj.metadata);
 });
 
-DocumentEntity.excepts('destroyedAt');
+DocumentEntity.excepts('_id');
 
 export default DocumentEntity.asImmutable();
