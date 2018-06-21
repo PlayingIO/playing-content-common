@@ -16,6 +16,9 @@ FolderEntity.expose('metadata', (obj, options) => {
   if (Types[obj.type]) {
     obj.metadata.facets = Types[obj.type].facets;
     obj.metadata.packages = Types[obj.type].packages;
+    if (obj.ordered) {
+      obj.metadata.facets = obj.metadata.facets.concat('Orderable');
+    }
   }
 
   return fp.sortKeys(obj.metadata);
