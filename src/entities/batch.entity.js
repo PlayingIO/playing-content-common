@@ -7,4 +7,4 @@ const BatchEntity = new Entity('Batch', {
 
 BatchEntity.discard('_id');
 
-export default BatchEntity.asImmutable();
+export default BatchEntity.freeze();

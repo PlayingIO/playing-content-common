@@ -19,4 +19,4 @@ BlobEntity.expose('url', (obj, options) => {
 
 BlobEntity.discard('_id');
 
-export default BlobEntity.asImmutable();
+export default BlobEntity.freeze();

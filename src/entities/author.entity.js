@@ -4,4 +4,4 @@ const AuthorEntity = new Entity('Author');
 
 AuthorEntity.discard('createdAt', 'updatedAt', 'destroyedAt');
 
-export default AuthorEntity.asImmutable();
+export default AuthorEntity.freeze();

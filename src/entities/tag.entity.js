@@ -4,4 +4,4 @@ const TagEntity = new Entity('Tag');
 
 TagEntity.discard('createdAt', 'updatedAt', 'destroyedAt');
 
-export default TagEntity.asImmutable();
+export default TagEntity.freeze();
