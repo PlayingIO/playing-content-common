@@ -23,4 +23,4 @@ FileEntity.expose('metadata', (obj, options) => {
 
 FileEntity.discard('_id');
 
-export default FileEntity.asImmutable();
+export default FileEntity.freeze();

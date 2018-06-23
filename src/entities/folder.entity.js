@@ -26,4 +26,4 @@ FolderEntity.expose('metadata', (obj, options) => {
 
 FolderEntity.discard('_id');
 
-export default FolderEntity.asImmutable();
+export default FolderEntity.freeze();

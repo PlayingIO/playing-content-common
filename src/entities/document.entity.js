@@ -23,4 +23,4 @@ DocumentEntity.expose('metadata', (obj, options) => {
 
 DocumentEntity.discard('_id');
 
-export default DocumentEntity.asImmutable();
+export default DocumentEntity.freeze();

@@ -23,4 +23,4 @@ NoteEntity.expose('metadata', (obj, options) => {
 
 NoteEntity.discard('_id');
 
-export default NoteEntity.asImmutable();
+export default NoteEntity.freeze();
