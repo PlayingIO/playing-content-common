@@ -89,7 +89,6 @@ function getBreadcrumbs (context, docs, options) {
 }
 
 function getCollections (context, docs, options) {
-  const svcDocuments = context.app.service('documents');
   const svcUserCollections = context.app.service('user-collections');
   if (!context.params.user) return Promise.resolve({});
 
