@@ -176,7 +176,7 @@ function getUserVisiblePermissions (context, docs, options) {
 }
 
 function getSubtypes (context, docs, options) {
-  const Types = options.DocTypes || DocTypes;
+  const Types = options.entities && options.entities.DocTypes || DocTypes;
   return Promise.resolve(fp.reduce((acc, doc) => {
     const subtypes = Types[doc.type] && Types[doc.type].subtypes;
     acc[doc.id] = subtypes? Object.values(fp.pick(subtypes, Types)) : [];
