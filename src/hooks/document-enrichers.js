@@ -16,7 +16,7 @@ const debug = makeDebug('playing:content-common:hooks:documentEnrichers');
 // check whether there is any folder children
 function hasFolderishChild (context, docs, options) {
   // only Folderish need to check hasFolderishChild
-  const Types = options.DocTypes || DocTypes;
+  const Types = options.entities.DocTypes || DocTypes;
   const folders = fp.reduce((ids, doc) => {
     if (fp.contains('Folderish', Types[doc.type] && Types[doc.type].facets || [])) {
       return ids.concat(doc.id);
@@ -155,7 +155,7 @@ function getAcls (context, docs, options) {
 }
 
 function getPermission (context, docs, options) {
-  const Types = options.DocTypes || DocTypes;
+  const Types = options.entities.DocTypes || DocTypes;
   return Promise.resolve(fp.reduce((acc, doc) => {
     const subtypes = Types[doc.type] && Types[doc.type].subtypes;
     // TODO: user acls
