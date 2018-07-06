@@ -5,8 +5,9 @@ import createDocumentActivity from '../helpers/create-document-activity';
 
 const createDocument = (context) => {
   const document = helpers.getHookData(context);
-  if (!document) return;
   const actor = helpers.getCurrentUser(context);
+  if (!document || !actor) return;
+
   const custom = {
     actor: `user:${document.creator}`,
     verb: 'document.create',
