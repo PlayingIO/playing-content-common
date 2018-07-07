@@ -18,7 +18,7 @@
   "dependencies": {
     "bluebird": "^3.5.1",
     "debug": "^3.1.0",
-    "esm": "^3.0.14",
+    "esm": "^3.0.63",
     "feathers-hooks": "^2.0.0",
     "feathers-hooks-common": "^3.5.1",
     "limax": "^1.6.0",
