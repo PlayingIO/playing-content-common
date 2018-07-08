@@ -12,8 +12,6 @@ import TagEntity from './entities/tag.entity';
 import createDocumentActivity from './helpers/create-document-activity';
 import getAces from './helpers/get-aces';
 import getParentAces from './helpers/get-parent-aces';
-import getParentDocument from './helpers/get-parent-document';
-import isRootFolder from './helpers/is-root-folder';
 import shortname from './helpers/shortname';
 
 import addMetadata from './hooks/add-metadata';
@@ -40,8 +38,6 @@ export default {
   createDocumentActivity,
   getAces,
   getParentAces,
-  getParentDocument,
-  isRootFolder,
   addMetadata,
   computeAncestors,
   computePath,
