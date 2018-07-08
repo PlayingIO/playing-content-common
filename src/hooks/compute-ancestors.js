@@ -1,9 +1,6 @@
 import assert from 'assert';
 import makeDebug from 'debug';
 import fp from 'mostly-func';
-import slug from 'limax';
-import path from 'path';
-import shortid from 'shortid';
 
 import getParentDocument from '../helpers/get-parent-document';
 import isRootFolder from '../helpers/is-root-folder';
