@@ -1,18 +1,14 @@
 import fp from 'mostly-func';
-import path from 'path';
 import { plural } from 'pluralize';
 
-import shortname from './shortname';
-
 /**
- * Copy documents to target path
+ * Copy documents
  */
-export default async function copyDocument (app, doc, target) {
+export default async function copyDocument (app, doc) {
   const svcService = app.service(plural(doc.type || 'document'));
   let clone = fp.omit([
-    'id', 'metadata', 'parent', 'path', 'ancestors',
+    'id', 'metadata', 'parent', 'ancestors',
     'createdAt', 'updatedAt', 'destroyedAt'
   ], doc);
-  clone.path = path.join(target, shortname(doc.type));
   return svcService.create(clone);
 }
