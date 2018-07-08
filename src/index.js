@@ -11,6 +11,7 @@ import TagEntity from './entities/tag.entity';
 
 import copyDocument from './helpers/copy-document';
 import createDocumentActivity from './helpers/create-document-activity';
+import fanoutDocuments from './helpers/fanout-documents';
 import getAces from './helpers/get-aces';
 import getParentAces from './helpers/get-parent-aces';
 import moveDocument from './helpers/move-document';
@@ -39,6 +40,7 @@ export default {
   TagEntity,
   copyDocument,
   createDocumentActivity,
+  fanoutDocuments,
   getAces,
   getParentAces,
   moveDocument,
