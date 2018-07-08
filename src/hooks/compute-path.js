@@ -10,7 +10,7 @@ import shortname from '../helpers/shortname';
 const debug = makeDebug('playing:content-common:hooks:computePath');
 
 // compute current path by parent
-export default function computePath (options = { slug: false }) {
+export default function computePath (options = {}) {
   return async context => {
     assert(context.type === 'before', `computePath must be used as a 'before' hook.`);
 
@@ -25,7 +25,7 @@ export default function computePath (options = { slug: false }) {
       context.data.parent = parent.id;
       // generate new type-name or use the existing name
       const type = context.data.type || options.type || 'document';
-      const name = shortname(type, context.data.path, options.slug && context.data.title);
+      const name = shortname(type, context.data.path);
       debug('compute parent path', parent.path, name);
       // join the parent path (against parent changing)
       context.data.path = path.join(parent.path, name);
