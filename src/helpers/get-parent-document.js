@@ -26,7 +26,7 @@ export default async function getParentDocument (app, id, data) {
     } else {
       const svcDocuments = app.service('documents');
       return svcDocuments.action('first').find({
-        path: path.dirname(data.path)
+        query: { path: path.dirname(data.path) }
       });
     }
   }
