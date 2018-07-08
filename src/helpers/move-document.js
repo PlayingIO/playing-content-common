@@ -7,8 +7,7 @@ import { plural } from 'pluralize';
 export default async function moveDocument (app, doc, target) {
   const svcService = app.service(plural(doc.type || 'document'));
   const data = {
-    parent: target.id,
-    path: path.resolve(target.path, path.basename(doc.path)),
+    path: path.resolve(target, path.basename(doc.path)),
     type: doc.type
   };
   return svcService.patch(doc.id, data);
