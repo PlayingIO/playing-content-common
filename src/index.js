@@ -9,9 +9,11 @@ import FolderEntity from './entities/folder.entity';
 import NoteEntity from './entities/note.entity';
 import TagEntity from './entities/tag.entity';
 
+import copyDocument from './helpers/copy-document';
 import createDocumentActivity from './helpers/create-document-activity';
 import getAces from './helpers/get-aces';
 import getParentAces from './helpers/get-parent-aces';
+import moveDocument from './helpers/move-document';
 import shortname from './helpers/shortname';
 
 import addMetadata from './hooks/add-metadata';
@@ -35,9 +37,12 @@ export default {
   FolderEntity,
   NoteEntity,
   TagEntity,
+  copyDocument,
   createDocumentActivity,
   getAces,
   getParentAces,
+  moveDocument,
+  shortname,
   addMetadata,
   computeAncestors,
   computePath,
