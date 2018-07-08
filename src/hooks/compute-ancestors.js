@@ -12,9 +12,9 @@ export default function computeAncestors () {
   return async context => {
     assert(context.type === 'before', `computeAncestors must be used as a 'before' hook.`);
 
-    // skip update/patch if not changing parent with both parent and path
+    // skip update/patch if not changing either parent or path
     if (context.method === 'update' || context.method === 'patch') {
-      if (!(context.data.parent && context.data.path)) return context;
+      if (!(context.data.parent || context.data.path)) return context;
     }
 
     // get parent or root document
