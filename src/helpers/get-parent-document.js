@@ -1,4 +1,5 @@
 import fp from 'mostly-func';
+import path from 'path';
 import { plural } from 'pluralize';
 
 import isRootFolder from './is-root-folder';
@@ -18,14 +19,22 @@ export default async function getParentDocument (app, id, data) {
     });
     return doc && doc.parent;
   }
-  // get the root folder or workspaces root
-  if (!isRootFolder(data.path)) {
-    const svcFolder = app.service('folders');
-    if (data.path.startsWith('/workspaces')) {
-      return svcFolder.get(null, { query: { path : '/workspaces' } });
+  // get by path if provided
+  if (data.path) {
+    if (isRootFolder(data.path)) {
+      return null; // root folder
     } else {
-      return svcFolder.get(null, { query: { path : '/' } });
+      const svcDocuments = app.service('documents');
+      return svcDocuments.action('first').find({
+        path: path.dirname(data.path)
+      });
     }
   }
-  return null;
+  // default parent is the root folder or workspaces root
+  const svcFolder = app.service('folders');
+  if (data.path.startsWith('/workspaces')) {
+    return svcFolder.get(null, { query: { path : '/workspaces' } });
+  } else {
+    return svcFolder.get(null, { query: { path : '/' } });
+  }
 }
