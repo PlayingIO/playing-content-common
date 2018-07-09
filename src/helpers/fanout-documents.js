@@ -30,10 +30,7 @@ export default async function fanoutDocuments (app, documents, operation, target
         operation, documents: children
       });
       // process next batch of children
-      const childrenTargets = fp.reduce((acc, child) => {
-        acc[child.id] = child.path;
-        return acc;
-      }, {}, children);
+      const childrenTargets = fp.pickFrom('id', 'path', children);
       await fanoutDocuments(app, children, operation, childrenTargets);
     }
   }
