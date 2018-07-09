@@ -25,8 +25,8 @@ export default function computeAncestors () {
       context.data.ancestors = fp.concat(parent.ancestors, [typedId]);
     } else {
       if (!isRootFolder(context.data.path)) {
-        debug('Parent ancestors undefined', parent);
-        throw new Error('Parent ancestors undefined');
+        debug('Parent ancestors is undefined or not exists', parent);
+        throw new Error('Parent ancestors is undefined or not exists');
       }
     }
     return context;

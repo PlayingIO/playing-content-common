@@ -31,8 +31,8 @@ export default function computePath (options = {}) {
       context.data.path = path.join(parent.path, name);
     } else {
       if (!isRootFolder(context.data.path)) {
-        debug('Parent path undefined', parent);
-        throw new Error('Parent path undefined');
+        debug('Parent path is undefined or not exists', parent);
+        throw new Error('Parent path is undefined or not exists');
       }
     }
     return context;
