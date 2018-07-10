@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   audio: {
     "type": "Audio",
     "packages": "playing-content-elements",

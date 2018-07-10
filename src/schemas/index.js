@@ -1,5 +1,5 @@
-import { blob } from './blob.schema';
+const { blob } = require('./blob.schema');
 
-export default {
+module.exports = {
   blob: { schema: blob }
 };

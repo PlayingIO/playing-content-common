@@ -1,33 +1,33 @@
-import DocTypes from './constants/doc-types';
-import Permissions from './constants/permissions';
-import AuthorEntity from './entities/author.entity';
-import BatchEntity from './entities/batch.entity';
-import BlobEntity from './entities/blob.entity';
-import DocumentEntity from './entities/document.entity';
-import FileEntity from './entities/file.entity';
-import FolderEntity from './entities/folder.entity';
-import NoteEntity from './entities/note.entity';
-import TagEntity from './entities/tag.entity';
+const DocTypes = require('./constants/doc-types');
+const Permissions = require('./constants/permissions');
+const AuthorEntity = require('./entities/author.entity');
+const BatchEntity = require('./entities/batch.entity');
+const BlobEntity = require('./entities/blob.entity');
+const DocumentEntity = require('./entities/document.entity');
+const FileEntity = require('./entities/file.entity');
+const FolderEntity = require('./entities/folder.entity');
+const NoteEntity = require('./entities/note.entity');
+const TagEntity = require('./entities/tag.entity');
 
-import copyDocument from './helpers/copy-document';
-import createDocumentActivity from './helpers/create-document-activity';
-import fanoutDocuments from './helpers/fanout-documents';
-import getAces from './helpers/get-aces';
-import getParentAces from './helpers/get-parent-aces';
-import moveDocument from './helpers/move-document';
-import shortname from './helpers/shortname';
+const copyDocument = require('./helpers/copy-document');
+const createDocumentActivity = require('./helpers/create-document-activity');
+const fanoutDocuments = require('./helpers/fanout-documents');
+const getAces = require('./helpers/get-aces');
+const getParentAces = require('./helpers/get-parent-aces');
+const moveDocument = require('./helpers/move-document');
+const shortname = require('./helpers/shortname');
 
-import addMetadata from './hooks/add-metadata';
-import computeAncestors from './hooks/compute-ancestors';
-import computePath from './hooks/compute-path';
-import documentEnrichers from './hooks/document-enrichers';
-import documentNotifier from './hooks/document-notifier';
-import fetchBlobs from './hooks/fetch-blobs';
-import isDocumentType from './hooks/is-document-type';
+const addMetadata = require('./hooks/add-metadata');
+const computeAncestors = require('./hooks/compute-ancestors');
+const computePath = require('./hooks/compute-path');
+const documentEnrichers = require('./hooks/document-enrichers');
+const documentNotifier = require('./hooks/document-notifier');
+const fetchBlobs = require('./hooks/fetch-blobs');
+const isDocumentType = require('./hooks/is-document-type');
 
-import schemas from './schemas';
+const schemas = require('./schemas');
 
-export default {
+module.exports = {
   DocTypes,
   Permissions,
   AuthorEntity,

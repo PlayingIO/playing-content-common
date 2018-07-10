@@ -1,4 +1,4 @@
-export default [
+module.exports = [
   'Everything',
   'Read',
   'Write',
