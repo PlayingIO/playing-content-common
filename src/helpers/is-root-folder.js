@@ -1,5 +1,5 @@
-import fp from 'mostly-func';
+const fp = require('mostly-func');
 
-export default function isRootFolder (path) {
+module.exports = function isRootFolder (path) {
   return fp.contains(path, ['/', '/workspaces']);
-}
+};

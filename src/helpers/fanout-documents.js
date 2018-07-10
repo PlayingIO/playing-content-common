@@ -1,7 +1,7 @@
-import fp from 'mostly-func';
-import path from 'path';
+const fp = require('mostly-func');
+const path = require('path');
 
-import shortname from './shortname';
+const shortname = require('./shortname');
 
 /**
  * Get children documents
@@ -19,7 +19,7 @@ const getChildrens = async (app, documents) => {
 /**
  * Fanout move/copy operation to children documents
  */
-export default async function fanoutDocuments (app, documents, operation, targets) {
+module.exports = async function fanoutDocuments (app, documents, operation, targets) {
   const childrens = await getChildrens(app, documents);
   for (let [parent, children] of Object.entries(childrens)) {
     const target = targets[parent];
@@ -34,4 +34,4 @@ export default async function fanoutDocuments (app, documents, operation, target
       await fanoutDocuments(app, children, operation, childrenTargets);
     }
   }
-}
+};

@@ -1,11 +1,11 @@
-import fp from 'mostly-func';
-import path from 'path';
-import { plural } from 'pluralize';
+const fp = require('mostly-func');
+const path = require('path');
+const { plural } = require('pluralize');
 
-import isRootFolder from './is-root-folder';
+const isRootFolder = require('./is-root-folder');
 
 // get parent or root or top workspaces document
-export default async function getParentDocument (app, id, data) {
+module.exports = async function getParentDocument (app, id, data) {
   // get by the parent if provided
   if (data.parent) {
     const svcDocuments = app.service('documents');
@@ -37,4 +37,4 @@ export default async function getParentDocument (app, id, data) {
   } else {
     return svcFolder.get(null, { query: { path : '/' } });
   }
-}
+};

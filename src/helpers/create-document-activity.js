@@ -1,7 +1,7 @@
-import { helpers } from 'mostly-feathers-mongoose';
+const { helpers } = require('mostly-feathers-mongoose');
 
 // create a document activity
-export default function createDocumentActivity (context, document, custom) {
+module.exports = function createDocumentActivity (context, document, custom) {
   const actor = helpers.getId(document.creator);
   return {
     actor: `user:${actor}`,
@@ -10,4 +10,4 @@ export default function createDocumentActivity (context, document, custom) {
     time: new Date().toISOString(),
     ...custom
   };
-}
+};

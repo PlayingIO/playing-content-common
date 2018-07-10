@@ -1,7 +1,7 @@
-import { helpers } from 'mostly-feathers-mongoose';
-import fp from 'mostly-func';
+const { helpers } = require('mostly-feathers-mongoose');
+const fp = require('mostly-func');
 
-export default async function getParentAces (app, docs, select = 'user,creator,*') {
+module.exports = async function getParentAces (app, docs, select = 'user,creator,*') {
   const svcDocuments = app.service('user-documents');
   const svcPermissions = app.service('user-permissions');
   const typedIds = fp.uniq(fp.flatMap(doc => {
@@ -42,4 +42,4 @@ export default async function getParentAces (app, docs, select = 'user,creator,*
     }
     return arr;
   }, {}, docs);
-}
+};

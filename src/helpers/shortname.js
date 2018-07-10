@@ -1,10 +1,10 @@
-import path from 'path';
-import shortid from 'shortid';
+const path = require('path');
+const shortid = require('shortid');
 
 /**
  * Generate a short typed name for a document
  */
-export default function shortname (type, existing) {
+module.exports = function shortname (type, existing) {
   let name = type + '-' + shortid.generate();
   if (existing) {
     name = path.basename(existing); // existing short name
@@ -14,4 +14,4 @@ export default function shortname (type, existing) {
     name = type + '-' + name;
   }
   return name;
-}
+};
