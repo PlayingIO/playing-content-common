@@ -1,6 +1,6 @@
-import fp from 'mostly-func';
-import Entity from 'mostly-entity';
-import url from 'url';
+const fp = require('mostly-func');
+const Entity = require('mostly-entity');
+const url = require('url');
 
 const BlobEntity = new Entity('Blob');
 
@@ -19,4 +19,4 @@ BlobEntity.expose('url', (obj, options) => {
 
 BlobEntity.discard('_id');
 
-export default BlobEntity.freeze();
+module.exports = BlobEntity.freeze();

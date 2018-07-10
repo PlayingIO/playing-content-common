@@ -1,5 +1,5 @@
-import Entity from 'mostly-entity';
-import BlobEntity from './blob.entity';
+const Entity = require('mostly-entity');
+const BlobEntity = require('./blob.entity');
 
 const BatchEntity = new Entity('Batch', {
   blobs: { using: BlobEntity }
@@ -7,4 +7,4 @@ const BatchEntity = new Entity('Batch', {
 
 BatchEntity.discard('_id');
 
-export default BatchEntity.freeze();
+module.exports = BatchEntity.freeze();

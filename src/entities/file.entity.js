@@ -1,7 +1,7 @@
-import Entity from 'mostly-entity';
-import fp from 'mostly-func';
-import BlobEntity from './blob.entity';
-import DocTypes from '../constants/doc-types';
+const Entity = require('mostly-entity');
+const fp = require('mostly-func');
+const BlobEntity = require('./blob.entity');
+const DocTypes = require('../constants/doc-types');
 
 const FileEntity = new Entity('File', {
   file: { using: BlobEntity },
@@ -23,4 +23,4 @@ FileEntity.expose('metadata', (obj, options) => {
 
 FileEntity.discard('_id');
 
-export default FileEntity.freeze();
+module.exports = FileEntity.freeze();

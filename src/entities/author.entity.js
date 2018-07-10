@@ -1,7 +1,7 @@
-import Entity from 'mostly-entity';
+const Entity = require('mostly-entity');
 
 const AuthorEntity = new Entity('Author');
 
 AuthorEntity.discard('createdAt', 'updatedAt', 'destroyedAt');
 
-export default AuthorEntity.freeze();
+module.exports = AuthorEntity.freeze();

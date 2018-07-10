@@ -1,7 +1,7 @@
-import Entity from 'mostly-entity';
+const Entity = require('mostly-entity');
 
 const TagEntity = new Entity('Tag');
 
 TagEntity.discard('createdAt', 'updatedAt', 'destroyedAt');
 
-export default TagEntity.freeze();
+module.exports = TagEntity.freeze();
