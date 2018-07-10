@@ -1,16 +1,16 @@
-import assert from 'assert';
-import makeDebug from 'debug';
-import fp from 'mostly-func';
-import path from 'path';
+const assert = require('assert');
+const makeDebug = require('debug');
+const fp = require('mostly-func');
+const path = require('path');
 
-import getParentDocument from '../helpers/get-parent-document';
-import isRootFolder from '../helpers/is-root-folder';
-import shortname from '../helpers/shortname';
+const getParentDocument = require('../helpers/get-parent-document');
+const isRootFolder = require('../helpers/is-root-folder');
+const shortname = require('../helpers/shortname');
 
 const debug = makeDebug('playing:content-common:hooks:computePath');
 
 // compute current path by parent
-export default function computePath (options = {}) {
+module.exports = function computePath (options = {}) {
   return async context => {
     assert(context.type === 'before', `computePath must be used as a 'before' hook.`);
 
@@ -37,4 +37,4 @@ export default function computePath (options = {}) {
     }
     return context;
   };
-}
+};

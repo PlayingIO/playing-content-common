@@ -1,7 +1,7 @@
-import { helpers } from 'mostly-feathers-mongoose';
-import feeds from 'playing-feed-common';
+const { helpers } = require('mostly-feathers-mongoose');
+const feeds = require('playing-feed-common');
 
-import createDocumentActivity from '../helpers/create-document-activity';
+const createDocumentActivity = require('../helpers/create-document-activity');
 
 const createDocument = (context) => {
   const document = helpers.getHookData(context);
@@ -26,7 +26,6 @@ const notifiers = {
   'document.create': createDocument
 };
 
-export default function documentNotifier (event) {
+module.exports = function documentNotifier (event) {
   return feeds.notify(event, notifiers);
-}
-
+};

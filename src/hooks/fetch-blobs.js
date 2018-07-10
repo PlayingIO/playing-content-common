@@ -1,14 +1,11 @@
-import assert from 'assert';
-import fp from 'mostly-func';
-import makeDebug from 'debug';
-
-import DocTypes from '../constants/doc-types';
-import Permissions from '../constants/permissions';
+const assert = require('assert');
+const fp = require('mostly-func');
+const makeDebug = require('debug');
 
 const debug = makeDebug('playing:content-common:hooks:fetchBlobs');
 
 // check whether there is any folder children
-export default function fetchBlobs (options = {}) {
+module.exports = function fetchBlobs (options = {}) {
   assert(options.xpath || options.xpaths, 'fetchBlobs need specified xpath(s)');
 
   return async context => {
@@ -61,4 +58,4 @@ export default function fetchBlobs (options = {}) {
     debug('fetchBlob hook.data', context.data, results);
     return context;
   };
-}
+};

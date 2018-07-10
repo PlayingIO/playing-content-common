@@ -1,14 +1,14 @@
-import assert from 'assert';
-import makeDebug from 'debug';
-import fp from 'mostly-func';
+const assert = require('assert');
+const makeDebug = require('debug');
+const fp = require('mostly-func');
 
-import getParentDocument from '../helpers/get-parent-document';
-import isRootFolder from '../helpers/is-root-folder';
+const getParentDocument = require('../helpers/get-parent-document');
+const isRootFolder = require('../helpers/is-root-folder');
 
 const debug = makeDebug('playing:content-common:hooks:computeAncestors');
 
 // compute ancestors of current document
-export default function computeAncestors () {
+module.exports = function computeAncestors () {
   return async context => {
     assert(context.type === 'before', `computeAncestors must be used as a 'before' hook.`);
 
@@ -31,4 +31,4 @@ export default function computeAncestors () {
     }
     return context;
   };
-}
+};

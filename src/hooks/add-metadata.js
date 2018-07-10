@@ -1,8 +1,8 @@
-import fp from 'mostly-func';
-import { iff, isProvider } from 'feathers-hooks-common';
-import { hooks } from 'mostly-feathers-mongoose';
+const fp = require('mostly-func');
+const { iff, isProvider } = require('feathers-hooks-common');
+const { hooks } = require('mostly-feathers-mongoose');
 
-export default function addMetadata (key, values) {
+module.exports = function addMetadata (key, values) {
   return iff(isProvider('external'), hooks.mapHookData(item => {
     if (item) {
       item.metadata = item.metadata || {};
@@ -14,4 +14,4 @@ export default function addMetadata (key, values) {
     }
     return item;
   }));
-}
+};

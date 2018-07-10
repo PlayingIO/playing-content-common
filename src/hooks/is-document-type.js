@@ -1,6 +1,6 @@
-import fp from 'mostly-func';
+const fp = require('mostly-func');
 
-export default function isDocumentType (type) {
+module.exports = function isDocumentType (type) {
   return async context => {
     if (context.type === 'before') {
       return context.params.type === type;
@@ -16,4 +16,4 @@ export default function isDocumentType (type) {
       }
     }
   };
-}
+};

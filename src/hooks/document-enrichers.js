@@ -1,15 +1,14 @@
-import assert from 'assert';
-import Promise from 'bluebird';
-import { helpers } from 'mostly-feathers-mongoose';
-import fp from 'mostly-func';
-import makeDebug from 'debug';
-import path from 'path';
-import url from 'url';
+const assert = require('assert');
+const Promise = require('bluebird');
+const { helpers } = require('mostly-feathers-mongoose');
+const fp = require('mostly-func');
+const makeDebug = require('debug');
+const url = require('url');
 
-import DocTypes from '../constants/doc-types';
-import Permissions from '../constants/permissions';
-import getAces from '../helpers/get-aces';
-import getParentAces from '../helpers/get-parent-aces';
+const DocTypes = require('../constants/doc-types');
+const Permissions = require('../constants/permissions');
+const getAces = require('../helpers/get-aces');
+const getParentAces = require('../helpers/get-parent-aces');
 
 const debug = makeDebug('playing:content-common:hooks:documentEnrichers');
 
@@ -202,7 +201,7 @@ function getThumbnail (context, docs) {
 }
 
 // Add document metadata according to request header
-export default function documentEnrichers (options = {}) {
+module.exports = function documentEnrichers (options = {}) {
   return async context => {
     assert(context.type === 'after', `documentEnrichers must be used as a 'after' hook.`);
 
@@ -275,4 +274,4 @@ export default function documentEnrichers (options = {}) {
       return context;
     });
   };
-}
+};
