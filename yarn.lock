@@ -1225,7 +1225,7 @@ feathers-hooks-common@^3.5.1:
     feathers-hooks "^2.0.1"
     traverse "^0.6.6"
 
-feathers-hooks@^2.0.0, feathers-hooks@^2.0.1:
+feathers-hooks@^2.0.1:
   version "2.1.2"
   resolved "https://registry.npmjs.org/feathers-hooks/-/feathers-hooks-2.1.2.tgz#f97af10f38621df816d754766c5c2e180b7df951"
   dependencies:
