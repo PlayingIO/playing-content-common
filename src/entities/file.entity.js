@@ -10,7 +10,7 @@ const FileEntity = new Entity('File', {
 
 FileEntity.expose('metadata', (obj, options) => {
   obj.metadata = obj.metadata || {};
-  
+
   const Types = options.DocTypes || DocTypes;
 
   if (Types[obj.type]) {

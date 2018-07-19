@@ -15,7 +15,7 @@ module.exports = function fetchBlobs (options = {}) {
     if (!context.params.provider) {
       return context;
     }
- 
+
     const svcBlobs = context.app.service('blobs');
 
     function getFullBlob (file) {

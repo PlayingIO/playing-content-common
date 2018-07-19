@@ -10,7 +10,7 @@ const FolderEntity = new Entity('Folder', {
 
 FolderEntity.expose('metadata', (obj, options) => {
   obj.metadata = obj.metadata || {};
-  
+
   const Types = options.DocTypes || DocTypes;
 
   if (Types[obj.type]) {

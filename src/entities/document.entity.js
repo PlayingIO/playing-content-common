@@ -10,7 +10,7 @@ const DocumentEntity = new Entity('Document', {
 
 DocumentEntity.expose('metadata', (obj, options) => {
   obj.metadata = obj.metadata || {};
-  
+
   const Types = options.DocTypes || DocTypes;
 
   if (Types[obj.type]) {

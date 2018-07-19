@@ -113,7 +113,7 @@ function getCollections (context, docs, options) {
 function getFavorites (context, docs, options) {
   const svcUserFavorites = context.app.service('user-favorites');
   if (!context.params.user) return Promise.resolve();
-  
+
   return svcUserFavorites.find({
     query: {
       user: context.params.user.id,
@@ -219,7 +219,7 @@ module.exports = function documentEnrichers (options = {}) {
 
     let documents = helpers.getHookDataAsArray(context);
     let promises = {};
-    
+
     enrichers.forEach(enricher => {
       switch(enricher) {
         case 'acls':
