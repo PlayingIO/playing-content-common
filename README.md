@@ -5,7 +5,7 @@ Content common utilites for building playful applications.
 
 # Documentation
 
-Please see the [documentation site](https://playingio.github.io).
+Please see the [documentation site](https://playingio.github.io) for more details.
 
 # Usage
 
